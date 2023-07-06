@@ -38,7 +38,7 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
         alert('All fields are required');
         launchStatus.innerHTML = "Awaiting Information Before Launch";
         launchStatus.style.color = "black";
-        list.style.visibility = 'hidden';
+        list.style.visibility = '';
     } else if (validateInput(pilot) === 'Is a Number' || validateInput(copilot) === 'Is a Number') {
         alert('Please enter alphabetic characters only for the Pilot Name and Co-pilot Name fields');
         launchStatus.innerHTML = "Awaiting Information Before Launch";
