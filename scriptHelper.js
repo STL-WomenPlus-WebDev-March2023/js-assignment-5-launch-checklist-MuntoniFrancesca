@@ -52,20 +52,26 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
     } else if (Number(fuelLevel) < 10000) {
         list.style.visibility = `visible`;
         fuelStatus.innerHTML = `Not enough fuel for the journey`;
-        launchStatus.innerHTML = `Shuttle not ready for launch`;
-        launchStatus.style.color = `red`;
+        launchStatus.innerHTML = `Shuttle Not Ready For Launch`;
+        launchStatus.style.color = `rgb(65, 159, 106)`;
     } else if (Number(cargoLevel) > 10000) {
         list.style.visibility = `visible`;
-        cargoStatus.innerHTML = `Too much mass for the shuttle to take off`;
-        launchStatus.innerHTML = `Shuttle not ready for launch`;
-        launchStatus.style.color = `red`;
-
-    } else if (Number(fuelLevel) > 10000 && (Number(cargoLevel) < 10000)) {
+        cargoStatus.innerHTML = `Cargo mass too heavy for launch`;
+        launchStatus.innerHTML = `Shuttle Not Ready For Launch`;
+        launchStatus.style.color = `rgb(65, 159, 106)`;
+    } else if (Number(fuelLevel) < 10000 && (Number(cargoLevel) > 10000)){
         list.style.visibility = `visible`;
-        pilotStatus.innerHTML = `Pilot ${pilot} is ready`;
-        copilotStatus.innerHTML = `Co-pilot ${copilot} is ready`;
+        fuelStatus.innerHTML = `Not enough fuel for the journey`;
+        cargoStatus.innerHTML = `Cargo mass too heavy for launch`;
+        launchStatus.innerHTML = `Shuttle Not Ready For Launch`;
+        launchStatus.style.color = `rgb(65, 159, 106)`;
+    }
+     else if (Number(fuelLevel) > 10000 && (Number(cargoLevel) < 10000)) {
+        list.style.visibility = `visible`;
+        pilotStatus.innerHTML = `Pilot ${pilot} is ready for launch`;
+        copilotStatus.innerHTML = `Co-pilot ${copilot} is ready for launch`;
         fuelStatus.innerHTML = `Enough fuel for the journey`;
-        cargoStatus.innerHTML = `Cargo mass light enough for launch`;
+        cargoStatus.innerHTML = `Cargo mass low enough for launch`;
         launchStatus.innerHTML = `Shuttle is ready for launch`;
         launchStatus.style.color = `green`;
     }
