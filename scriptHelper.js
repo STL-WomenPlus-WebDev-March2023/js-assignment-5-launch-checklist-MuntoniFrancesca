@@ -43,12 +43,12 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
         alert('Please enter alphabetic characters only for the Pilot Name and Co-pilot Name fields');
         launchStatus.innerHTML = "Awaiting Information Before Launch";
         launchStatus.style.color = "black";
-        list.style.visibility = 'hidden';
+        list.style.visibility = '';
     } else if (validateInput(fuelLevel) === 'Not a Number' || validateInput(cargoLevel) === 'Not a Number') {
         alert('Please enter numerical characters only for the Fuel Level and Cargo Mass fields');
         launchStatus.innerHTML = "Awaiting Information Before Launch";
         launchStatus.style.color = "black";
-        list.style.visibility = 'hidden';
+        list.style.visibility = '';
     } else if (Number(fuelLevel) < 10000) {
         list.style.visibility = `visible`;
         fuelStatus.innerHTML = `Not enough fuel for the journey`;
