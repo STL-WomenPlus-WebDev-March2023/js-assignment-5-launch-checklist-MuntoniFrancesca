@@ -1,7 +1,8 @@
 // Write your JavaScript code here!
 
 window.addEventListener("load", function () {
-    const form = document.querySelector("form");
+    const form = document.getElementById("formSubmit");
+    
     form.addEventListener("submit", function (event) {
         event.preventDefault();
         let pilot = document.querySelector("input[name=pilotName]").value;
@@ -11,7 +12,6 @@ window.addEventListener("load", function () {
         let list = document.getElementById("faultyItems");
 
         formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel);
-    })
 
 
     let listedPlanets;
@@ -32,6 +32,10 @@ window.addEventListener("load", function () {
         let imageUrl = planet.image;
         addDestinationInfo(document, name, diameter, star, distance, moons, imageUrl);
     })
+    
+    })
+
+
 
 });
 
