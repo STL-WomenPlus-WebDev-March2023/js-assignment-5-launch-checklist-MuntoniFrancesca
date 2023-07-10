@@ -2,7 +2,7 @@
 
 window.addEventListener("load", function () {
     const form = document.getElementById("formSubmit");
-    form.addEventListener("submit", function (event) {
+    form.addEventListener("click", function (event) {
         event.preventDefault();
         let pilot = document.querySelector("input[name=pilotName]").value;
         let copilot = document.querySelector("input[name=copilotName]").value;
