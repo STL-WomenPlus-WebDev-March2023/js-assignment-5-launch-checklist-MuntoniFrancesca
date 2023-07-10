@@ -28,25 +28,21 @@ function validateInput(testInput) {
 
 
 function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
+    
     let pilotStatus = document.getElementById('pilotStatus');
     let copilotStatus = document.getElementById('copilotStatus');
     let fuelStatus = document.getElementById('fuelStatus');
     let cargoStatus = document.getElementById('cargoStatus');
     let launchStatus = document.getElementById('launchStatus');
-
+    
+    
     if (validateInput(pilot) === 'Empty' || validateInput(copilot) === 'Empty' || validateInput(fuelLevel) === 'Empty' || validateInput(cargoLevel) === 'Empty') {
         alert(`All fields are required`);
-        list.style.visibility = "hidden";
     } else if (validateInput(pilot) === 'Is a Number' || validateInput(copilot) === 'Is a Number') {
         alert(`Please enter alphabetic characters only for the Pilot Name and Co-pilot Name fields`);
-        list.style.visibility = "hidden";
     } else if (validateInput(fuelLevel) === 'Not a Number' || validateInput(cargoLevel) === 'Not a Number') {
         alert(`Please enter numerical characters only for the Fuel Level and Cargo Mass fields`);
-        list.style.visibility = "hidden";
-    }
-    console.log(list);
-    
-    if (Number(fuelLevel) < 10000) {
+    } else if (Number(fuelLevel) < 10000) {
         list.style.visibility = "visible";
         pilotStatus.innerHTML = `Pilot ${pilot} is ready for launch`;
         copilotStatus.innerHTML = `Co-pilot ${copilot} is ready for launch`;
