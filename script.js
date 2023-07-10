@@ -11,7 +11,7 @@ window.addEventListener("load", function () {
         let list = document.getElementById("faultyItems");
 
         formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel);
-        list.style.visibility = `hidden`;
+
 
     let listedPlanets;
     // Set listedPlanetsResponse equal to the value returned by calling myFetch()
