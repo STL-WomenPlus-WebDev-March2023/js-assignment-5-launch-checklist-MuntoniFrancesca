@@ -2,7 +2,6 @@
 
 window.addEventListener("load", function () {
     const form = document.getElementById("formSubmit");
-    
     form.addEventListener("submit", function (event) {
         event.preventDefault();
         let pilot = document.querySelector("input[name=pilotName]").value;
@@ -32,7 +31,7 @@ window.addEventListener("load", function () {
         let imageUrl = planet.image;
         addDestinationInfo(document, name, diameter, star, distance, moons, imageUrl);
     })
-    
+
     })
 
 
