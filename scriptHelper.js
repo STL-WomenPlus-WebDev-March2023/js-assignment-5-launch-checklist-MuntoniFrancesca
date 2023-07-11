@@ -34,14 +34,15 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
     let fuelStatus = document.getElementById('fuelStatus');
     let cargoStatus = document.getElementById('cargoStatus');
     let launchStatus = document.getElementById('launchStatus');
-    
-    list.style.visibility = "hidden";
 
     if (validateInput(pilot) === 'Empty' || validateInput(copilot) === 'Empty' || validateInput(fuelLevel) === 'Empty' || validateInput(cargoLevel) === 'Empty') {
+        list.style.visibility = "hidden";
         alert(`All fields are required`);
     } else if (validateInput(pilot) === 'Is a Number' || validateInput(copilot) === 'Is a Number') {
+        list.style.visibility = "hidden";
         alert(`Please enter alphabetic characters only for the Pilot Name and Co-pilot Name fields`);
     } else if (validateInput(fuelLevel) === 'Not a Number' || validateInput(cargoLevel) === 'Not a Number') {
+        list.style.visibility = "hidden";
         alert(`Please enter numerical characters only for the Fuel Level and Cargo Mass fields`);
     } else if (Number(fuelLevel) < 10000) {
         list.style.visibility = "visible";
